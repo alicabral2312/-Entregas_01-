@@ -5,13 +5,13 @@
 
 - **Alison Verónica Cabral Rodríguez**
 - **Yahir Cruz López**
-
+- **Joselyn Guadalupe Salvador Rivera**
 
 ## Matrículas
 
 - **Alison Verónica Cabral Rodríguez:** 220593
 - **Yahir Cruz López:** 221296
-
+- **Joselyn Guadalupe Salvador Rivera** 210341
 
 ## Carrera
 
