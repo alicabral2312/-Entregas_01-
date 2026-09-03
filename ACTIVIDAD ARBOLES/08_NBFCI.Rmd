@@ -1,0 +1,75 @@
+---
+title: "Naive Bayes aplicado a estudiantes de la FCI"
+author: "Actividad de Inteligencia Artificial"
+date: "2026-09-02"
+output: html_document
+---
+
+# Nota sobre los datos
+
+La consigna solicita información de 20 a 50 estudiantes. Para no utilizar datos personales, este ejercicio incluye **30 registros simulados** con las mismas categorías indicadas por el profesor. En una entrega con datos reales, deben sustituirse por las observaciones autorizadas.
+
+# 1. Variables
+
+- TiempoEstudio: Alto, Medio, Bajo.
+- Asistencia: Alta, Media, Baja.
+- Participacion: Alta, Media, Baja.
+- SituacionEconomica: Buena, Mala.
+- Rendimiento: Excelente, Bueno, Regular, Deficiente.
+
+# 2. Datos
+
+```{r}
+datos <- read.csv("08_datos_NBFCI_simulados.csv", check.names = FALSE)
+datos
+```
+
+# 3. Preparación
+
+```{r}
+datos$TiempoEstudio <- factor(datos$TiempoEstudio)
+datos$Asistencia <- factor(datos$Asistencia)
+datos$Participacion <- factor(datos$Participacion)
+datos$SituacionEconomica <- factor(datos$SituacionEconomica)
+datos$Rendimiento <- factor(datos$Rendimiento)
+```
+
+# 4. Separación 80/20
+
+```{r}
+library(caret)
+library(e1071)
+
+set.seed(123)
+indice <- createDataPartition(datos$Rendimiento, p = 0.8, list = FALSE)
+entrenamiento <- datos[indice, ]
+prueba <- datos[-indice, ]
+```
+
+# 5. Entrenamiento Naive Bayes
+
+```{r}
+modelo <- naiveBayes(Rendimiento ~ TiempoEstudio + Asistencia +
+                     Participacion + SituacionEconomica,
+                     data = entrenamiento)
+modelo
+```
+
+# 6. Predicción y matriz de confusión
+
+```{r}
+pred <- predict(modelo, prueba)
+matriz <- table(Predicho = pred, Real = prueba$Rendimiento)
+matriz
+
+precision <- sum(diag(matriz)) / sum(matriz)
+precision
+```
+
+# 7. Interpretación
+
+La matriz de confusión permite identificar en qué clases el modelo acierta y en cuáles confunde estudiantes. La precisión resume la proporción de predicciones correctas.
+
+# 8. Conclusión
+
+Naive Bayes puede utilizarse para clasificar el rendimiento académico a partir de variables categóricas. En una aplicación real se debe trabajar con datos autorizados, proteger la identidad de los estudiantes y evaluar el modelo con una muestra representativa.
