@@ -1,40 +1,19 @@
-# -actividad03-
+# Actividad 3 - Sistema Experto para Asignación Docente FCI UNACAR
 
-# Actividad 3 servidor Prolog
+## Información del Proyecto y Alumnos
+* **Profesor:** M.I. J. Flores
+* **Materia:** Inteligencia Artificial / Programación Avanzada
+* **Facultad:** Facultad de Ciencias de la Información - UNACAR
+* **Integrantes:**
+  * [Alison Veronica Cabral Rodríguez] - [220593]
+  * [Yahir Cruz Lopez] - [221296] (si aplica)
 
-## Integrantes
-
-- **Alison Verónica Cabral Rodríguez**
-- **Yahir Cruz López**
-
-
-## Matrículas
-
-- **Alison Verónica Cabral Rodríguez:** 220593
-- **Yahir Cruz López:** 221296
-
-
-## Carrera
-
-**Ingeniería en Sistemas Computacionales**
-
-## Materia
-
-**Programación Avanzada**
-
-## Docente
-
-**Mtro. Jesús Alejandro Flores Hernández**
-
-## Fecha de entrega
-
-**31/10/2026**
-
----
 
 ## Descripción
+Servidor web implementado en SWI-Prolog que resuelve mediante un sistema experto la asignación de profesores a academias, cuerpos académicos, proyectos, cursos de docencia (optimizando el perfil más calificado) y cursos de capacitación, además de permitir la consulta integral del expediente docente.
 
-Este repositorio contiene las evidencias correspondientes a la **Actividad 1 SE** de la materia de **Programación Avanzada**.
-
-En este repositorio se incluyen los materiales y trabajos realizados por los integrantes del equipo, así como las evidencias correspondientes a la actividad.
-
+## Instrucciones de Ejecución
+1. Abrir una terminal en la carpeta raíz del proyecto.
+2. Iniciar el servidor con el comando:
+   ```bash
+   swipl -s server.pl
