@@ -6,7 +6,7 @@
 
 - **Alison Verónica Cabral Rodríguez**
 - **Yahir Cruz López**
-- 
+  
 
 ## Matrículas
 
@@ -29,8 +29,6 @@
 ## Fecha de entrega
 
 **31/10/2026**
-
----
 
 ## Descripción
 
